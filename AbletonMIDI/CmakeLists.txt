@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.10)
+project(AbletonMidi)
+
+set(CMAKE_CXX_STANDARD 17)
+
+include_directories(include)
+
+find_package(RtMidi REQUIRED)
+
+add_executable(AbletonMidi
+    src/main.cpp
+    src/MidiSender.cpp
+    src/Timing.cpp
+)
+
+target_link_libraries(AbletonMidi RtMidi)
